@@ -1,11 +1,14 @@
 <template>
   <div id="app">
 
+    <game-board v-if="characters.length":characters="characters"></game-board>
+
   </div>
 </template>
 
 <script>
 
+import GameBoard from './components/GameBoard.vue'
 
 export default {
   name: 'App',
@@ -15,7 +18,7 @@ export default {
     }
   },
   components: {
-
+    'game-board': GameBoard
   },
   mounted() {
       fetch('https://codeclan-guess-who.herokuapp.com/api/characters')
